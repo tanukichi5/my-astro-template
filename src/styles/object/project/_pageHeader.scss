@@ -1,0 +1,13 @@
+@use 'global' as *;
+
+.p-pageHeader {
+  + * {
+    margin-top: 40px;
+  }
+}
+
+.p-pageHeader-title {
+  @include font-size(28px);
+  font-weight: bold;
+  line-height: 1.4;
+}

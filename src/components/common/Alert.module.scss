@@ -1,0 +1,44 @@
+@use '@/styles/global' as *;
+
+//汎用アラートメッセージ用のスタイルです
+//
+//参考↓ こんなやつ
+//https://getbootstrap.com/docs/5.0/components/alerts/
+
+//メッセージ表示エリア
+.c-alert {
+  background: #ffe8ec;
+  border: 1px solid #f50934;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 20px;
+  line-height: 1.8;
+  margin: 20px 0;
+  &.-success {
+    border-color: #3bc585;
+    background-color: #e8fff6;
+  }
+  &.-danger {
+    border-color: #f50934;
+    background-color: #ffe8ec;
+  }
+  &.-warning {
+    border-color: #d3a615;
+    background-color: #fffde8;
+  }
+}
+
+//メッセージテキスト
+.c-alert__text {
+  @include font-size(16px);
+  color: red;
+  @include state('.c-alert', '.-success') {
+    color: #3bc585;
+  }
+  @include state('.c-alert', '.-danger') {
+    color: red;
+  }
+  @include state('.c-alert', '.-warning') {
+    color: #d3a615;
+  }
+}
