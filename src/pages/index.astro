@@ -3,20 +3,21 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Title from "@/components/Title";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionPanel } from "@/components/modules/accordion";
-import Alert from '@/components/common/Alert'
-import IconFont from '@/components/common/IconFont'
+import Alert from "@/components/common/Alert";
+import IconFont from "@/components/common/IconFont";
+import Button from "@/components/common/button";
 ---
 
 <Layout title="Welcome to Astro.">
-	<title slot='site-head'>タイトル</title>
+  <title slot="site-head">タイトル</title>
   <main>
     <h1>Welcome to <span class="text-gradient">Astro TEST</span></h1>
     <Title>ああああ</Title>
-		<Alert alert='danger'>
-			あああああ
-		</Alert>
+    <Alert alert="danger">あああああ</Alert>
 
-		<IconFont icon='file' />
+    <IconFont icon="file" />
+
+    <Button tagType="button" theme="basic" text="サンプルてきすと" leftIcon='file' type="button" />
 
     <!-- <Accordion>
       <AccordionItem>

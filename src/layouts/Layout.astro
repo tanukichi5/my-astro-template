@@ -1,14 +1,14 @@
 ---
 import SiteHead from "./SiteHead.astro";
+import type { SiteHeadProps } from "./SiteHead.astro";
 
-export interface Props {
-	title: string;
-}
+
+export type Props = SiteHeadProps
 
 //style
 import '@/styles/base.scss'; //グローバルCSS
 
-const { title } = Astro.props;
+const props:Props = Astro.props;
 ---
 
 <!DOCTYPE html>

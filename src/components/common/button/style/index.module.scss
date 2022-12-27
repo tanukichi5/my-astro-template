@@ -1,0 +1,243 @@
+@use "src/styles/global" as *;
+
+//ボタンのベース設定
+:where(.button) {
+  //buttonタグの場合はブラウザデフォルトスタイルをリセットする
+  @include replace(":where(.button)", "button:where(.button)") {
+    // padding: 0;
+    background: none;
+    border: none;
+    appearance: none;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  width: max-content;
+  min-height: 50px;
+  padding: 0.7em 24px;
+  border-radius: 30px;
+  line-height: 1.4;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  &.-baseWidth-auto {
+    &:not(#_) {
+      min-width: auto;
+    }
+  }
+  //基本テーマ
+  &.-theme-basic {
+    position: relative;
+    background: $color-button;
+    border: none;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      display: block;
+      content: "";
+      background: $color-button02;
+      padding: 5px;
+      border-radius: 30px;
+      opacity: 0;
+      z-index: 0;
+      transition: opacity 0.3s;
+      @include hover(":where(.button).-theme-basic") {
+        opacity: 1;
+      }
+    }
+  }
+  //グラデーションボーダーに白背景のテーマ
+  &.-theme-border {
+    position: relative;
+    background: $color-button;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      display: block;
+      content: "";
+      background: #fff;
+      padding: 5px;
+      border-radius: 30px;
+      z-index: 0;
+    }
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      display: block;
+      content: "";
+      background:$color-button02;
+      border-radius: 30px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 0;
+      @include hover(":where(.button).-theme-border") {
+        opacity: 1;
+      }
+    }
+  }
+  //グレーのボーダーに白背景のテーマ
+  &.-theme-border2 {
+    position: relative;
+    background: #fff;
+    border: solid 1px #c7c7c7;
+    box-shadow: none;
+    transition: background 0.3s;
+    @include hover(":where(.button).-theme-border2") {
+      background: #c7c7c7;
+    }
+  }
+  //disabledのテーマ
+  &.-theme-disabled {
+    position: relative;
+    background: #dce4ef;
+    box-shadow: none;
+    cursor: not-allowed;
+    transition: background 0.3s;
+  }
+
+  //smallサイズ
+  &.-size-small {
+    min-height: 40px;
+    min-width: 200px;
+    padding: 5px 20px;
+    @include min-screen("md") {
+      min-height: 40px;
+      min-width: 250px;
+    }
+  }
+
+  @include min-screen("md") {
+    min-height: 60px;
+  }
+}
+
+//ボタンのテキスト
+.button__text {
+  position: relative;
+  display: block;
+  // justify-content: center;
+  // margin-top: -0.1em; //Noto Sans JPに対する微調整スタイル
+  color: $color-text;
+  @include font-size(18px);
+  font-weight: bold;
+  z-index: 1;
+  @include min-screen("md") {
+    @include font-size(18px);
+  }
+  //基本テーマ
+  @include state(":where(.button)", ".-theme-basic") {
+    color: #fff;
+  }
+  //グラデーションボーダーに白背景のテーマ
+  @include state(":where(.button)", ".-theme-border") {
+    background:$color-button;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.3s;
+    @include hover(":where(.button).-theme-border") {
+      background: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  //グレーのボーダーに白背景のテーマ
+  @include state(":where(.button)", ".-theme-border2") {
+    color: $color-text;
+  }
+  //disabledのテーマ
+  @include state(":where(.button)", ".-theme-disabled") {
+    color: #9ba7b8;
+  }
+
+  //smallサイズ
+  @include state(":where(.button)", ".-size-small") {
+    @include font-size(16px);
+    @include min-screen("md") {
+      @include font-size(16px);
+    }
+  }
+
+  @include state(":where(.button)", ".-icon-position-side") {
+    width: 100%;
+  }
+}
+
+//ボタンのアイコン
+.button__icon {
+  position: relative;
+  // margin-top: 0.1em; //Noto Sans JPに対する微調整スタイル
+  @include font-size(18px);
+  color: $color-text;
+  z-index: 1;
+  //基本テーマ
+  @include state(":where(.button)", ".-theme-basic") {
+    color: #fff;
+  }
+  //グラデーションボーダーに白背景のテーマ
+  @include state(":where(.button)", ".-theme-border") {
+    background: $color-button;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.3s;
+    @include hover(":where(.button).-theme-border") {
+      background: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  //グレーのボーダーに白背景のテーマ
+  @include state(":where(.button)", ".-theme-border2") {
+    color: $color-text;
+  }
+  //disabledのテーマ
+  @include state(":where(.button)", ".-theme-disabled") {
+    color: #9ba7b8;
+  }
+
+  //smallサイズ
+  @include state(":where(.button)", ".-size-small") {
+    @include font-size(16px);
+    @include min-screen("md") {
+      @include font-size(16px);
+    }
+  }
+
+  //左側のアイコン
+  &:first-of-type {
+    margin-right: 10px;
+    @include state(":where(.button)", ".-icon-position-side") {
+      width: 0;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 10px;
+      margin-left: 24px;
+    }
+  }
+  //右側のアイコン
+  &:last-of-type {
+    margin-left: 10px;
+    @include state(":where(.button)", ".-icon-position-side") {
+      width: 0;
+      margin-left: 0;
+    }
+  }
+}

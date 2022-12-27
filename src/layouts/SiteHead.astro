@@ -1,5 +1,5 @@
 ---
-export type Props = {
+export type SiteHeadProps = {
   title?: string;
   titleAllReplace?: boolean; // タイトルを全て置き換えるかどうか
   description?: string;
@@ -8,7 +8,7 @@ export type Props = {
   ogUrl?: string;
 };
 
-const { title, titleAllReplace, description, ogUrl, ogimagePath }: Props = Astro.props;
+const { title, titleAllReplace, description, ogUrl, ogimagePath }: SiteHeadProps = Astro.props;
 ---
 
 <!-- 基本 -->
