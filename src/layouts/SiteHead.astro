@@ -1,0 +1,34 @@
+---
+export type Props = {
+  title?: string;
+  titleAllReplace?: boolean; // タイトルを全て置き換えるかどうか
+  description?: string;
+  keyword?: string;
+  ogimagePath?: string;
+  ogUrl?: string;
+};
+
+const { title, titleAllReplace, description, ogUrl, ogimagePath }: Props = Astro.props;
+---
+
+<!-- 基本 -->
+<title>{title ? `${title}${!titleAllReplace ? " | サイトタイトル" : ""}` : `サイトタイトル`}</title>
+<meta name="description" content={description ? `${description}` : `ディスクリプションが入ります`} />
+
+<!-- OGP 共通設定 -->
+<meta
+  property="og:title"
+  content={title ? `${title}${!titleAllReplace ? " | サイトタイトル" : ""}` : `サイトタイトル`}
+/>
+<meta property="og:description" content={description ? `${description}` : `ディスクリプションが入ります`} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={ogUrl ? `${ogUrl}` : `https://aaaabbbbccccxxxx.com`} />
+<meta property="og:site_name" content="サイト名が入ります" />
+<!-- <meta property="og:image" content={ogimagePath ? `${ogimagePath}` : `${baseUrl}/img/ogimage.png`} /> -->
+
+<!-- OGP twitter用設定 -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title ? `${title}${!titleAllReplace ? " | サイトタイトル" : ""}` : `サイトタイトル`} />
+<meta name="twitter:description" content={description ? `${description}` : `ディスクリプションが入ります`} />
+<meta name="twitter:url" content={ogUrl ? `${ogUrl}` : `https://aaaabbbbccccxxxx.com`} />
+<!-- <meta name="twitter:image" content={ogimagePath ? `${ogimagePath}` : `${baseUrl}/img/ogimage.png`} /> -->
