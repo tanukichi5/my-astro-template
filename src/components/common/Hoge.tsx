@@ -14,7 +14,8 @@
  */
 
 // reactの機能
-import {useState} from 'react';
+import { useState } from 'react';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionPanel } from "@/components/modules/accordion";
 
 // style
 import styles from './Alert.module.scss';
@@ -29,26 +30,23 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Alert: React.FC<Props> = ({ ...props }) => {
+const Hoge = () => {
 
-  const [hoge, setHoge] = useState('aaaa')
-  console.log(hoge)
-
-  const handleClick = () => {
-    console.log('ほげ')
-    setHoge('vvvv')
-
-  }
 
   return (
     <>
-      <div className={`${styles['c-alert']} ${styles['-' + props.alert]}`}>
-        <p className={styles['c-alert__text']}>{props.children}</p>
-      </div>
-      <p>{hoge}</p>
-      <button onClick={handleClick}>ボタン</button>
+      <Accordion defaultExpandedPanels={[0]}>
+        <AccordionItem>
+          <AccordionTrigger>ボタン1</AccordionTrigger>
+          <AccordionPanel>アコーディオン内容1</AccordionPanel>
+        </AccordionItem>
+        <AccordionItem>
+          <AccordionTrigger>ボタン2</AccordionTrigger>
+          <AccordionPanel>アコーディオン内容2</AccordionPanel>
+        </AccordionItem>
+      </Accordion>
     </>
   );
 };
 
-export default Alert;
+export default Hoge;
