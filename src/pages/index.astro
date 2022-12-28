@@ -6,6 +6,7 @@ import Alert from "@/components/common/Alert";
 import IconFont from "@/components/common/IconFont";
 import Button from "@/components/common/button";
 import Hoge from "@/components/common/Hoge";
+import ModalTest from "@/components/ModalTest";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionPanel } from "@/components/modules/accordion";
 ---
 
@@ -27,6 +28,8 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionPanel } from "@/co
 
     <a href="/about">aboutページへ</a>
     <Hoge client:load />
+
+    <ModalTest client:load></ModalTest>
 
     <!-- <Accordion defaultExpandedPanels={[0]} client:load>
       <AccordionItem client:load>

@@ -21,7 +21,9 @@ const props:Props = Astro.props;
 		<SiteHead title={'aaaaa'} />
 	</head>
 	<body>
-		<slot />
+		<div class="siteWrapper">
+			<slot />
+		</div>
 	</body>
 </html>
 <style is:global>
