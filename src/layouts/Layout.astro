@@ -1,5 +1,7 @@
 ---
 import SiteHead from "./SiteHead.astro";
+import Header from "./parts/Header.astro";
+import Footer from "./parts/Footer.astro";
 import type { SiteHeadProps } from "./SiteHead.astro";
 
 
@@ -22,7 +24,9 @@ const props:Props = Astro.props;
 	</head>
 	<body>
 		<div class="siteWrapper">
+			<Header />
 			<slot />
+			<Footer />
 		</div>
 	</body>
 </html>
