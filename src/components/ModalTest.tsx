@@ -38,7 +38,7 @@ const ModalTest = () => {
     siteContent: '.siteWrapper', // TODO: これは対象がおかしいのでモーダルを修正する必要がある（モーダル内もスクーンリーダーの対象外になっている）
     expanded: false,
     domHide: false,
-    backFixed: false,
+    backFixed: true,
     animationType: 'transition',
     // customClassNames: {
     //   wrapper: styles['header-account__modal-base-wrapper'],

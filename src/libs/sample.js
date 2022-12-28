@@ -1,7 +1,7 @@
 
 const sample = () => {
   console.log('さんぷる')
-  alert('さんぷる')
+  // alert('さんぷる')
 }
 
 // sample()
