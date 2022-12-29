@@ -22,6 +22,7 @@
     "prettier/prettier": "error", //2行以上の空白でエラーなど
     "no-use-before-define": "off",
     "no-irregular-whitespace": "off", //全角スペースなどの大きな余白を許容する
+    "no-unused-vars": "off", //未使用の変数を定義してもスルー
     "react/prop-types": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
@@ -41,7 +42,6 @@
       "files": ["*.astro"],
       "rules": {
         "react/no-unescaped-entities": "off",
-        "no-unused-vars": "off", //未使用の変数を定義してもスルー
         "react/no-unknown-property": "off" //classがclassNameに変換されないように
       }
     },
