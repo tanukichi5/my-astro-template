@@ -12,6 +12,9 @@ import ModalTest from '@/components/ModalTest';
 
 <script>
   import sample from '@/libs/sample';
+  import Simplemodal from '@/libs/simplemodal';
+  const simplemodal = new Simplemodal();
+
   sample();
 </script>
 <Layout title="Welcome to Astro." description={'ああああああ'}>
@@ -25,6 +28,9 @@ import ModalTest from '@/components/ModalTest';
       client:load
       >あああああ</Alert
     >
+
+    <button data-simplemodal-trigger="modal-id-01">モーダルを開く</button>
+    <div id="modal-id-01">モーダルの中身</div>
 
     <img src="/images/base/favicon.ico" alt="">
 
