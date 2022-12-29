@@ -30,23 +30,11 @@ type Props = {
 };
 
 const Alert: React.FC<Props> = ({ ...props }) => {
-
-  const [hoge, setHoge] = useState('aaaa')
-  console.log(hoge)
-
-  const handleClick = () => {
-    console.log('ほげ')
-    setHoge('vvvv')
-
-  }
-
   return (
     <>
       <div className={`${styles['c-alert']} ${styles['-' + props.alert]}`}>
         <p className={styles['c-alert__text']}>{props.children}</p>
       </div>
-      <p>{hoge}</p>
-      <button onClick={handleClick}>ボタン</button>
     </>
   );
 };
