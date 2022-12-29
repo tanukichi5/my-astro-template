@@ -2,45 +2,46 @@
 import SiteHead from "./SiteHead.astro";
 import Header from "./parts/Header.astro";
 import Footer from "./parts/Footer.astro";
+import BaseScript from "./parts/BaseScript.astro";
 import type { SiteHeadProps } from "./SiteHead.astro";
 
-
-export type Props = SiteHeadProps
+export type Props = SiteHeadProps;
 
 //style
-import '@/styles/base.scss'; //グローバルCSS
+import "@/styles/base.scss"; //グローバルCSS
 
-const props:Props = Astro.props;
+const props: Props = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<SiteHead title={'aaaaa'} />
-	</head>
-	<body>
-		<div class="siteWrapper">
-			<Header />
-			<slot />
-			<Footer />
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SiteHead title={"aaaaa"} />
+  </head>
+  <body>
+    <div class="siteWrapper">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+		<BaseScript />
+  </body>
+	<style is:global>
+    :root {
+      --accent: 124, 58, 237;
+      --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+    }
+    html {
+      font-family: system-ui, sans-serif;
+      background-color: #f6f6f6;
+    }
+    code {
+      font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+        Courier New, monospace;
+    }
+  </style>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
