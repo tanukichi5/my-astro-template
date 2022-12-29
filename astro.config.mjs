@@ -10,6 +10,7 @@ const __dirname = dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
+  // base: '/docs',
   integrations: [react()],
   vite: {
     resolve: {

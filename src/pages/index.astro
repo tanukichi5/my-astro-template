@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Title from '@/components/Title';
 import Alert from '@/components/common/Alert';
 import IconFont from '@/components/common/IconFont';
 import Button from '@/components/common/button';
@@ -21,8 +20,7 @@ import ModalTest from '@/components/ModalTest';
   <title slot="site-head">タイトル</title>
 
   <main>
-    <h1>Welcome to <span class="text-gradient">Astro TEST</span></h1>
-    <Title>ああああ</Title>
+    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
     <Alert
       alert="success"
       client:load
