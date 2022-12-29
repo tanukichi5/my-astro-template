@@ -1,11 +1,11 @@
 ---
-import SiteHead from './SiteHead.astro';
+import SiteHead from './parts/SiteHead.astro';
+import type { SiteHeadProps } from './parts/SiteHead.astro';
 import Header from './parts/Header.astro';
 import Footer from './parts/Footer.astro';
 import BaseScript from './parts/BaseScript.astro';
-import type { SiteHeadProps } from './SiteHead.astro';
 
-export type Props = SiteHeadProps;
+type Props = SiteHeadProps;
 
 //style
 import '@/styles/base.scss'; //グローバルCSS
@@ -16,21 +16,7 @@ const props: Props = Astro.props;
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
-    />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
-    <SiteHead title={'aaaaa'} />
+    <SiteHead {...props} />
   </head>
   <body>
     <div class="siteWrapper">

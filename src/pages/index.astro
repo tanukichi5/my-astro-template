@@ -14,7 +14,7 @@ import ModalTest from '@/components/ModalTest';
   import sample from '@/libs/sample';
   sample();
 </script>
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Astro." description={'ああああああ'}>
   <title slot="site-head">タイトル</title>
 
   <main>
@@ -25,6 +25,8 @@ import ModalTest from '@/components/ModalTest';
       client:load
       >あああああ</Alert
     >
+
+    <img src="/images/base/favicon.ico" alt="">
 
     <IconFont icon="file2" />
 

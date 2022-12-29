@@ -11,6 +11,13 @@ export type SiteHeadProps = {
 const { title, titleAllReplace, description, ogUrl, ogimagePath }: SiteHeadProps = Astro.props;
 ---
 
+<meta charset="UTF-8" />
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+/>
+
 <!-- 基本 -->
 <title>{title ? `${title}${!titleAllReplace ? ' | サイトタイトル' : ''}` : `サイトタイトル`}</title>
 <meta
@@ -47,3 +54,8 @@ const { title, titleAllReplace, description, ogUrl, ogimagePath }: SiteHeadProps
 <meta name="twitter:description" content={description ? `${description}` : `ディスクリプションが入ります`} />
 <meta name="twitter:url" content={ogUrl ? `${ogUrl}` : `https://aaaabbbbccccxxxx.com`} />
 <!-- <meta name="twitter:image" content={ogimagePath ? `${ogimagePath}` : `${baseUrl}/img/ogimage.png`} /> -->
+
+<link
+  rel="icon"
+  href="/images/base/favicon.ico"
+/>
