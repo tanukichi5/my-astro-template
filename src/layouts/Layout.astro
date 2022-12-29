@@ -10,20 +10,21 @@
  * をslotに渡す。そうしないとhead内のmetaが無くなる
  * 
  */
+
+// layouts
 import SiteHead from './parts/SiteHead.astro';
 import Header from './parts/Header.astro';
 import Footer from './parts/Footer.astro';
 import BaseScript from './parts/BaseScript.astro';
 
-type Props = {
-  hoge?: string;
-  headEdit?: boolean; //head編集
-};
-
 //style
 import '@/styles/base.scss'; //グローバルCSS
 import styles from './Layout.module.scss';
 
+type Props = {
+  hoge?: string;
+  headEdit?: boolean; //head編集
+};
 const props: Props = Astro.props;
 ---
 
@@ -43,19 +44,5 @@ const props: Props = Astro.props;
       <Footer />
     </div>
     <BaseScript />
-    <style is:global>
-      :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-      }
-      html {
-        font-family: system-ui, sans-serif;
-        background-color: #f6f6f6;
-      }
-      code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-          Courier New, monospace;
-      }
-    </style>
   </body>
 </html>

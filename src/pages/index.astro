@@ -1,7 +1,9 @@
 ---
+// layouts
 import Layout from '../layouts/Layout.astro';
 import SiteHead from '@/layouts/parts/SiteHead.astro';
 
+// components
 import Card from '../components/Card.astro';
 import Alert from '@/components/common/Alert';
 import IconFont from '@/components/common/IconFont';
@@ -11,16 +13,11 @@ import ReactTab from '@/components/sample/ReactTab';
 import ReactModal from '@/components/sample/ReactModal';
 ---
 
-<script>
-  import sample from '@/libs/sample';
-  import Simplemodal from '@/libs/simplemodal';
-  const simplemodal = new Simplemodal();
-
-  sample();
-</script>
 <Layout headEdit={true}>
- 
-  <SiteHead slot="site-head" title='aaaaa' hoge='aaaa' />
+  <SiteHead
+    slot="site-head"
+    title="TOPページ"
+  />
 
   <main>
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
@@ -33,7 +30,10 @@ import ReactModal from '@/components/sample/ReactModal';
     <button data-simplemodal-trigger="modal-id-01">モーダルを開く</button>
     <div id="modal-id-01">モーダルの中身</div>
 
-    <img src="/images/base/favicon.ico" alt="">
+    <img
+      src="/images/base/favicon.ico"
+      alt=""
+    />
 
     <IconFont icon="file2" />
 
@@ -52,27 +52,6 @@ import ReactModal from '@/components/sample/ReactModal';
 
     <ReactModal client:load />
 
-    <!-- <Accordion defaultExpandedPanels={[0]} client:load>
-      <AccordionItem client:load>
-        <AccordionTrigger client:load>ボタン1</AccordionTrigger>
-        <AccordionPanel client:load>アコーディオン内容1</AccordionPanel>
-      </AccordionItem>
-      <AccordionItem client:load>
-        <AccordionTrigger client:load>ボタン2</AccordionTrigger>
-        <AccordionPanel client:load>アコーディオン内容2</AccordionPanel>
-      </AccordionItem>
-    </Accordion> -->
-
-    <!-- <Accordion>
-      <AccordionItem>
-        <AccordionTrigger>ボタン1</AccordionTrigger>
-        <AccordionPanel>アコーディオン内容1</AccordionPanel>
-      </AccordionItem>
-      <AccordionItem>
-        <AccordionTrigger>ボタン2</AccordionTrigger>
-        <AccordionPanel>アコーディオン内容2</AccordionPanel>
-      </AccordionItem>
-    </Accordion> -->
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
@@ -103,10 +82,22 @@ import ReactModal from '@/components/sample/ReactModal';
       />
     </ul>
   </main>
-   <p slot="site-head">タイトル</p>
 </Layout>
 
+<!-- コーディングを開始するときは以下のstyleやscriptは全消しでOK! -->
 <style>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: #f6f6f6;
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+      monospace;
+  }
   main {
     margin: auto;
     padding: 1.5rem;
@@ -150,3 +141,11 @@ import ReactModal from '@/components/sample/ReactModal';
     padding: 0;
   }
 </style>
+
+<script>
+  import sample from '@/libs/sample';
+  import Simplemodal from '@/libs/simplemodal';
+  const simplemodal = new Simplemodal();
+
+  sample();
+</script>

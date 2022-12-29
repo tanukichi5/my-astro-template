@@ -1,12 +1,21 @@
 ---
+// layouts
 import Layout from '@/layouts/Layout.astro';
+import SiteHead from '@/layouts/parts/SiteHead.astro';
+
+// components
 import Alert from '@/components/common/Alert';
 import IconFont from '@/components/common/IconFont';
 import Button from '@/components/common/button';
 ---
 
-<Layout title="Welcome to Astro.">
-  <title slot="site-head">タイトル</title>
+<Layout headEdit={true}>
+
+  <SiteHead
+    slot="site-head"
+    title="ABOUTページ"
+  />
+
   <main>
     <h1>Welcome to <span class="text-gradient">ABOUTページ</span></h1>
     <Alert alert="danger">あああああ</Alert>
@@ -21,16 +30,6 @@ import Button from '@/components/common/button';
       type="button"
     />
 
-    <!-- <Accordion>
-      <AccordionItem>
-        <AccordionTrigger>ボタン1</AccordionTrigger>
-        <AccordionPanel>アコーディオン内容1</AccordionPanel>
-      </AccordionItem>
-      <AccordionItem>
-        <AccordionTrigger>ボタン2</AccordionTrigger>
-        <AccordionPanel>アコーディオン内容2</AccordionPanel>
-      </AccordionItem>
-    </Accordion> -->
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
