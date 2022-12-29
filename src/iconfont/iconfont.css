@@ -1,15 +1,14 @@
 @font-face {
 	font-family: "iconfont";
-	src: url('/fonts/iconfont.eot?1672279852');
-	src: url('/fonts/iconfont.eot?#iefix') format('eot'),
-		url('/fonts/iconfont.woff?1672279852') format('woff'),
-		url('/fonts/iconfont.ttf?1672279852') format('truetype'),
-		url('/fonts/iconfont.svg#iconfont') format('svg');
+	src: url('../../public/fonts/iconfont.eot');
+	src: url('../../public/fonts/iconfont.eot?#iefix') format('eot'),
+		url('../../public/fonts/iconfont.woff') format('woff'),
+		url('../../public/fonts/iconfont.ttf') format('truetype'),
+		url('../../public/fonts/iconfont.svg#iconfont') format('svg');
 	font-weight: normal;
 	font-style: normal;
-	font-display: block;
 }
-:where(.iconfont) {
+.iconfont {
 	display: inline-block;
 	font-family: "iconfont";
 	font-style: normal;
