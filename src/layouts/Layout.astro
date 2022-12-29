@@ -9,6 +9,7 @@ type Props = SiteHeadProps;
 
 //style
 import '@/styles/base.scss'; //グローバルCSS
+import styles from './Layout.module.scss';
 
 const props: Props = Astro.props;
 ---
@@ -19,9 +20,13 @@ const props: Props = Astro.props;
     <SiteHead {...props} />
   </head>
   <body>
-    <div class="siteWrapper">
+    <div class={[styles['site'], 'siteWrapper'].join(' ')}>
       <Header />
-      <slot />
+      <div class={styles['site-contents']}>
+        <main class={styles['site-main']}>
+          <slot />
+        </main>
+      </div>
       <Footer />
     </div>
     <BaseScript />

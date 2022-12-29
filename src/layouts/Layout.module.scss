@@ -1,1 +1,66 @@
-@use '/src/styles/layout/site';
+@use '@/styles/global' as *;
+// @use '/src/styles/layout/site';
+
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-contents {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  &.-col-2 {
+    flex-direction: row;
+  }
+  @include state('.site', '.-fixedHeader') {
+    padding-top: 50px;
+    @include min-screen('md') {
+      padding-top: 60px;
+    }
+  }
+}
+
+.site-contents-detail {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  z-index: 1;
+}
+
+.site-main {
+  flex: 1;
+  &.-colored {
+    background: $color-background;
+  }
+  &.-base-padding {
+    padding: 40px;
+  }
+}
+
+.site-side {
+  width: 280px;
+  background: $color-main;
+}
+
+// .site-main-wrapper {
+//   flex: 1;
+//   background: #F9F9F9;
+//   height: 100%;
+//   padding: 20px 20px 40px 20px;
+//   @include min-screen('md') {
+//     padding: 20px 40px 40px 40px;
+//   }
+// }
+
+// .l-contents {
+//   position: relative;
+//   z-index: 99;
+// } //contents
+
+
+
+
+
