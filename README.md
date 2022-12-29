@@ -1,3 +1,71 @@
+# Astroベースの静的サイトの制作環境です
+
+- node v16.19.0
+- npm v8.1.3
+
+## 環境セットアップ（初回のみ）
+
+```
+$ npm i
+```
+
+## ローカルサーバー起動（開発環境立ち上げ）
+
+```
+$ npm run dev
+```
+
+その後、[http://localhost:3000](http://localhost:3000)にアクセス。 
+
+## ディレクトリ構成
+```
+.
+├ public //静的ファイルを配置
+└ src
+　 ├ components //コンポーネント
+　 ├ iconfont //アイコンフォント
+　 ├ libs //ライブラリなどを使用した固有のロジック
+　 ├ pages //Astroでルーティングされるページコンポーネント
+　 └ styles //スタイルを配置
+```
+
+## importのエイリアス
+
+下記のように`@`を付けることでsrcディレクトリ内を絶対パスで指定可能
+
+```
+import Button from '@/components/common/Button'
+```
+
+## アイコンフォントについて
+
+```
+$ npm run iconfont
+```
+
+上記コマンドでアイコンフォントを作成するgulpがWatch状態になります。  
+この状態で`/iconfont/svg/`ディレクトリにsvgファイルを配置するとアイコンフォントが作成されます。
+
+### アイコンフォントの使用方法
+
+アイコンフォント用のコンポーネントを用意しているのでそれを使用します。  
+`/components/common/IconFont.tsx`
+
+### アイコンフォントのプレビュー
+
+`/iconfont/sample.html`をブラウザで開くだけで使用可能なアイコンフォント一覧を確認できます。
+
+
+## Lint & Prettier
+
+以下コマンドでLintエラー検出・自動補完
+```
+npm run lint:fix
+```
+
+以降は最初からあったREADME
+
+
 # Welcome to [Astro](https://astro.build)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
