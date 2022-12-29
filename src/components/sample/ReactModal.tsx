@@ -1,40 +1,23 @@
 /**
- * errorやsuccessメッセージを表示するコンポーネントです
  *
- * @see
- * bootstrapのAlertsを参考にしてます
- * https://getbootstrap.com/docs/5.0/components/alerts/
- *
- * @usage
- * import Alert from 'components/common/Alert'
- * <Alert alert='success'>
- *    メッセージをここに記入
- * </Alert>
+ * reactで作ったModalのサンプルコンポーネントです
  *
  */
 
 // reactの機能
-import Modal, { useModal } from '@/components/modules/modal';
+import Modal, { useModal } from '@/components/modules/reactModal';
 
 // style
 // import styles from './Alert.module.scss';
 
 //= ===========================各種インポートここまで
 
-type Props = {
-  /**
-   * 色を値に応じて変えることができます。
-   */
-  alert: 'success' | 'danger' | 'warning';
-  children: React.ReactNode;
-};
-
 const ModalTest = () => {
   const [accountModalState, setAccountModalState, accountModalToggle] = useModal({
     init: true,
     id: 'account',
     portalTarget: 'body',
-    siteContent: '.siteWrapper', // TODO: これは対象がおかしいのでモーダルを修正する必要がある（モーダル内もスクーンリーダーの対象外になっている）
+    siteContent: '.siteWrapper',
     expanded: false,
     domHide: false,
     backFixed: true,
