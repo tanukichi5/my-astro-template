@@ -25,7 +25,6 @@
     "react/prop-types": "off",
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "off",
     "camelcase": "off"
   },
   "settings": {
@@ -41,7 +40,8 @@
     {
       "files": ["*.astro"],
       "rules": {
-        "react/no-unescaped-entities": "off", //classがclassNameに変換されないように
+        "react/no-unescaped-entities": "off",
+        "no-unused-vars": "off", //未使用の変数を定義してもスルー
         "react/no-unknown-property": "off" //classがclassNameに変換されないように
       }
     },

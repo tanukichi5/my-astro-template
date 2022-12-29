@@ -10,12 +10,12 @@ import ReactTab from "@/components/sample/ReactTab";
 import ModalTest from "@/components/ModalTest";
 ---
 
+<script>
+  import sample from "@/libs/sample";
+  sample();
+</script>
 <Layout title="Welcome to Astro.">
   <title slot="site-head">タイトル</title>
-  <script>
-    import sample from "@/libs/sample";
-    sample();
-  </script>
 
   <main>
     <h1>Welcome to <span class="text-gradient">Astro TEST</span></h1>
