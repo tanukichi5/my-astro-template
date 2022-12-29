@@ -1,17 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Title from "@/components/Title";
-import Alert from "@/components/common/Alert";
-import IconFont from "@/components/common/IconFont";
-import Button from "@/components/common/button";
-import ReactAccordion from "@/components/sample/ReactAccordion";
-import ReactTab from "@/components/sample/ReactTab";
-import ModalTest from "@/components/ModalTest";
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Title from '@/components/Title';
+import Alert from '@/components/common/Alert';
+import IconFont from '@/components/common/IconFont';
+import Button from '@/components/common/button';
+import ReactAccordion from '@/components/sample/ReactAccordion';
+import ReactTab from '@/components/sample/ReactTab';
+import ModalTest from '@/components/ModalTest';
 ---
 
 <script>
-  import sample from "@/libs/sample";
+  import sample from '@/libs/sample';
   sample();
 </script>
 <Layout title="Welcome to Astro.">
@@ -20,18 +20,28 @@ import ModalTest from "@/components/ModalTest";
   <main>
     <h1>Welcome to <span class="text-gradient">Astro TEST</span></h1>
     <Title>ああああ</Title>
-    <Alert alert="success" client:load>あああああ</Alert>
+    <Alert
+      alert="success"
+      client:load
+      >あああああ</Alert
+    >
 
     <IconFont icon="file2" />
 
-    <Button tagType="button" theme="basic" text="サンプルてきすと" leftIcon="file" type="button" />
+    <Button
+      tagType="button"
+      theme="basic"
+      text="サンプルてきすと"
+      leftIcon="file"
+      type="button"
+    />
 
     <a href="/about">aboutページへ</a>
 
     <ReactAccordion client:load />
     <ReactTab client:load />
 
-    <ModalTest client:load></ModalTest>
+    <ModalTest client:load />
 
     <!-- <Accordion defaultExpandedPanels={[0]} client:load>
       <AccordionItem client:load>
@@ -58,7 +68,10 @@ import ModalTest from "@/components/ModalTest";
       To get started, open the directory <code>src/pages</code> in your project.<br />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
-    <ul role="list" class="link-card-grid">
+    <ul
+      role="list"
+      class="link-card-grid"
+    >
       <Card
         href="https://docs.astro.build/"
         title="Documentation"

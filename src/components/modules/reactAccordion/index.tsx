@@ -30,12 +30,12 @@
  *
  */
 
-import Accordion from './Accordion'
-import AccordionItem from './AccordionItem'
-import AccordionTrigger from './AccordionTrigger'
-import AccordionPanel from './AccordionPanel'
+import Accordion from './Accordion';
+import AccordionItem from './AccordionItem';
+import AccordionTrigger from './AccordionTrigger';
+import AccordionPanel from './AccordionPanel';
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionPanel }
+export { Accordion, AccordionItem, AccordionTrigger, AccordionPanel };
 
 // export { default as Accordion } from './Accordion'
 // export { default as AccordionItem } from './AccordionItem'

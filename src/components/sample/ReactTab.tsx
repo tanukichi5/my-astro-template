@@ -1,17 +1,14 @@
 /**
- * 
+ *
  * reactで作ったtabのサンプルコンポーネントです
  *
  */
-
 
 import { Tab, TabContent, TabList, TabListItem, TabPanel } from '@/components/modules/reactTab';
 
 //= ===========================各種インポートここまで
 
 const SampleReactTab = () => {
-
-
   return (
     <>
       <Tab>

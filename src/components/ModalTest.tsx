@@ -14,7 +14,7 @@
  */
 
 // reactの機能
-import Modal, { useModal } from '@/components/modules/modal'
+import Modal, { useModal } from '@/components/modules/modal';
 
 // style
 // import styles from './Alert.module.scss';
@@ -30,7 +30,6 @@ type Props = {
 };
 
 const ModalTest = () => {
-
   const [accountModalState, setAccountModalState, accountModalToggle] = useModal({
     init: true,
     id: 'account',
@@ -62,10 +61,7 @@ const ModalTest = () => {
           setRootState={setAccountModalState}
         >
           <div>
-
-            <button
-              onClick={accountModalToggle}
-            >
+            <button onClick={accountModalToggle}>
               <span>閉じる</span>
             </button>
           </div>

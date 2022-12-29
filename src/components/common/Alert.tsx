@@ -14,7 +14,7 @@
  */
 
 // reactの機能
-import {useState} from 'react';
+import { useState } from 'react';
 
 // style
 import styles from './Alert.module.scss';

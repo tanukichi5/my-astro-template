@@ -1,14 +1,14 @@
 ---
-import SiteHead from "./SiteHead.astro";
-import Header from "./parts/Header.astro";
-import Footer from "./parts/Footer.astro";
-import BaseScript from "./parts/BaseScript.astro";
-import type { SiteHeadProps } from "./SiteHead.astro";
+import SiteHead from './SiteHead.astro';
+import Header from './parts/Header.astro';
+import Footer from './parts/Footer.astro';
+import BaseScript from './parts/BaseScript.astro';
+import type { SiteHeadProps } from './SiteHead.astro';
 
 export type Props = SiteHeadProps;
 
 //style
-import "@/styles/base.scss"; //グローバルCSS
+import '@/styles/base.scss'; //グローバルCSS
 
 const props: Props = Astro.props;
 ---
@@ -17,10 +17,20 @@ const props: Props = Astro.props;
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <SiteHead title={"aaaaa"} />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <SiteHead title={'aaaaa'} />
   </head>
   <body>
     <div class="siteWrapper">
@@ -28,20 +38,20 @@ const props: Props = Astro.props;
       <slot />
       <Footer />
     </div>
-		<BaseScript />
+    <BaseScript />
+    <style is:global>
+      :root {
+        --accent: 124, 58, 237;
+        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        background-color: #f6f6f6;
+      }
+      code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+          Courier New, monospace;
+      }
+    </style>
   </body>
-	<style is:global>
-    :root {
-      --accent: 124, 58, 237;
-      --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-    }
-    html {
-      font-family: system-ui, sans-serif;
-      background-color: #f6f6f6;
-    }
-    code {
-      font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-        Courier New, monospace;
-    }
-  </style>
 </html>

@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import Provider, { Context, InjectedTabState } from './TabContext'
+import React, { useState, useEffect } from 'react';
+import Provider, { Context, InjectedTabState } from './TabContext';
 
 // import uuid from "./helpers/uuid";
 
-const Tab: React.FC<InjectedTabState> = props => {
-  const childrenWithProps = React.Children.map(
-    props.children,
-    (child: any, i) => {
-      // 各子要素をクローンしつつ index を渡す
-      // console.log(i)
-      return React.cloneElement(child, { panelIndex: i })
-    }
-  )
+const Tab: React.FC<InjectedTabState> = (props) => {
+  const childrenWithProps = React.Children.map(props.children, (child: any, i) => {
+    // 各子要素をクローンしつつ index を渡す
+    // console.log(i)
+    return React.cloneElement(child, { panelIndex: i });
+  });
   return (
     <Provider defaultExpandedPanel={props.expandedPanel}>
       <Context.Consumer>
-        {value => {
+        {(value) => {
           // propsをvalueをマージ
           // const overrideOptions = {
           //   hoge: !(props.hoge === undefined)
@@ -29,17 +26,15 @@ const Tab: React.FC<InjectedTabState> = props => {
 
           return (
             <>
-              <div className={`tab ${props.className ? props.className : ''}`}>
-                {childrenWithProps}
-              </div>
+              <div className={`tab ${props.className ? props.className : ''}`}>{childrenWithProps}</div>
               {/* {value.tabState.hoge}
               {props.children} */}
             </>
-          )
+          );
         }}
       </Context.Consumer>
     </Provider>
-  )
-}
+  );
+};
 
-export default Tab
+export default Tab;

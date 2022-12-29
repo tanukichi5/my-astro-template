@@ -1,11 +1,11 @@
 // ユニークidを生成
-let count = 0
+let count = 0;
 export default function uuid() {
   // ランダムなIDを生成
-  const randomID = Math.random().toString(36).slice(2)
-  return `${randomID}--${count++}`
+  const randomID = Math.random().toString(36).slice(2);
+  return `${randomID}--${count++}`;
 }
 
 export function reset() {
-  count = 0
+  count = 0;
 }

@@ -26,13 +26,13 @@
  *
  */
 
-import Tab from './Tab'
-import TabList from './TabList'
-import TabListItem from './TabListItem'
-import TabContent from './TabContent'
-import TabPanel from './TabPanel'
+import Tab from './Tab';
+import TabList from './TabList';
+import TabListItem from './TabListItem';
+import TabContent from './TabContent';
+import TabPanel from './TabPanel';
 
-export { Tab, TabList, TabListItem, TabContent, TabPanel }
+export { Tab, TabList, TabListItem, TabContent, TabPanel };
 // export { default as Tab } from './Tab'
 // export { default as TabList } from './TabList'
 // export { default as TabListItem } from './TabListItem'

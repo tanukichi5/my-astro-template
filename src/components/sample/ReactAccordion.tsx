@@ -1,15 +1,14 @@
 /**
  *
  * reactで作ったAccordionのサンプルコンポーネントです
- * 
+ *
  * メモ)
  * .astroファイルに直接Accordionをインポートすると動かなかったのでreactコンポーネント内で実行すると動いたのでこのような実装になった
  *
  */
 
 // reactの機能
-import { Accordion, AccordionItem, AccordionTrigger, AccordionPanel } from "@/components/modules/reactAccordion";
-
+import { Accordion, AccordionItem, AccordionTrigger, AccordionPanel } from '@/components/modules/reactAccordion';
 
 //= ===========================各種インポートここまで
 

@@ -1,22 +1,22 @@
-import React, { useContext, useRef, useEffect } from 'react'
-import { Context } from './ItemContext'
+import React, { useContext, useRef, useEffect } from 'react';
+import { Context } from './ItemContext';
 
 type Props = {
-  className?: string
-  children?: React.ReactNode
-}
+  className?: string;
+  children?: React.ReactNode;
+};
 
 const AccordionPanel = ({ className, children }: Props) => {
-  const itemContext = useContext(Context)
-  const paneleElement = useRef(null)
+  const itemContext = useContext(Context);
+  const paneleElement = useRef(null);
 
   useEffect(() => {
     // パネルのDOMを取得
-    itemContext.setItemState(itemState => ({
+    itemContext.setItemState((itemState) => ({
       ...itemState,
       panelDOM: paneleElement,
-    }))
-  }, [])
+    }));
+  }, []);
 
   return (
     <div
@@ -27,7 +27,7 @@ const AccordionPanel = ({ className, children }: Props) => {
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default AccordionPanel
+export default AccordionPanel;

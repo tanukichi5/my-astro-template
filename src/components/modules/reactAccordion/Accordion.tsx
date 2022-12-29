@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import Provider, { Context, InjectedAccordionState } from './AccordionContext'
+import React, { useState, useEffect } from 'react';
+import Provider, { Context, InjectedAccordionState } from './AccordionContext';
 
-const Accordion: React.FC<InjectedAccordionState> = props => {
+const Accordion: React.FC<InjectedAccordionState> = (props) => {
   // // is mounted
   // const [mounted, setMounted] = useState(false)
   // useEffect(() => {
@@ -10,14 +10,11 @@ const Accordion: React.FC<InjectedAccordionState> = props => {
   // //= ===========is mounted
   // if (!mounted) return null
 
-  const childrenWithProps = React.Children.map(
-    props.children,
-    (child: any, i) => {
-      // 各子要素をクローンしつつ index を渡す
-      // console.log(i)
-      return React.cloneElement(child, { panelIndex: i })
-    }
-  )
+  const childrenWithProps = React.Children.map(props.children, (child: any, i) => {
+    // 各子要素をクローンしつつ index を渡す
+    // console.log(i)
+    return React.cloneElement(child, { panelIndex: i });
+  });
 
   return (
     <Provider
@@ -30,22 +27,16 @@ const Accordion: React.FC<InjectedAccordionState> = props => {
       onClose={props.onClose}
     >
       <Context.Consumer>
-        {value => {
+        {(value) => {
           return (
             <>
-              <div
-                className={`accordion ${
-                  props.className ? props.className : ''
-                }`}
-              >
-                {childrenWithProps}
-              </div>
+              <div className={`accordion ${props.className ? props.className : ''}`}>{childrenWithProps}</div>
             </>
-          )
+          );
         }}
       </Context.Consumer>
     </Provider>
-  )
-}
+  );
+};
 
-export default Accordion
+export default Accordion;

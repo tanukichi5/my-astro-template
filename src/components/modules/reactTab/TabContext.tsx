@@ -1,36 +1,36 @@
-import React, { useState, createContext } from 'react'
-import uuid from './helpers/uuid'
+import React, { useState, createContext } from 'react';
+import uuid from './helpers/uuid';
 
 // デフォルトprops
 interface Props {
   children?: React.ReactNode;
-  defaultExpandedPanel?: number
+  defaultExpandedPanel?: number;
 }
 
 // tabStateのインターフェース
 export interface InjectedTabState {
   children?: React.ReactNode;
-  uuid?: string
-  expandedPanel?: number
-  className?: string
+  uuid?: string;
+  expandedPanel?: number;
+  className?: string;
 }
 
 // createContextでcontextを作成
 export const Context = createContext(
   {} as {
-    tabState: InjectedTabState
-    setTabState: React.Dispatch<React.SetStateAction<InjectedTabState>>
+    tabState: InjectedTabState;
+    setTabState: React.Dispatch<React.SetStateAction<InjectedTabState>>;
   }
-)
+);
 
-const Provider: React.FC<Props> = props => {
+const Provider: React.FC<Props> = (props) => {
   // const abc = uuid()
 
   // useStateでstateを作成
   const [tabState, setTabState] = useState<InjectedTabState>({
     uuid: uuid(),
     expandedPanel: props.defaultExpandedPanel ? props.defaultExpandedPanel : 0,
-  })
+  });
 
   return (
     // contextのProviderコンポーネントを使う
@@ -43,7 +43,7 @@ const Provider: React.FC<Props> = props => {
     >
       {props.children}
     </Context.Provider>
-  )
-}
+  );
+};
 
-export default Provider
+export default Provider;

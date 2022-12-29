@@ -1,16 +1,16 @@
 // 絶対に初回走るな
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 const useEffectCustom = (func: any, dependencyList: any) => {
-  const fisrtFlgRef = useRef(true)
+  const fisrtFlgRef = useRef(true);
 
   useEffect(() => {
     if (!fisrtFlgRef.current) {
-      func()
+      func();
     } else {
-      fisrtFlgRef.current = false
+      fisrtFlgRef.current = false;
     }
-  }, dependencyList)
-}
+  }, dependencyList);
+};
 
-export default useEffectCustom
+export default useEffectCustom;
