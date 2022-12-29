@@ -12,8 +12,6 @@
     "es6": true
   },
   "extends": [
-    "next",
-    "next/core-web-vitals",
     "eslint:recommended", //ESLintの推奨設定を適用する
     "plugin:react/recommended",
     "plugin:astro/recommended",
