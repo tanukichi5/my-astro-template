@@ -1,11 +1,24 @@
 ---
+/**
+ * 
+ * 基本のレイアウトコンポーネントです。
+ * 
+ * Props
+ * headEdit: trueを渡すとheadを編集可能になる
+ * その場合必ず
+ * <SiteHead slot="site-head" />
+ * をslotに渡す。そうしないとhead内のmetaが無くなる
+ * 
+ */
 import SiteHead from './parts/SiteHead.astro';
-import type { SiteHeadProps } from './parts/SiteHead.astro';
 import Header from './parts/Header.astro';
 import Footer from './parts/Footer.astro';
 import BaseScript from './parts/BaseScript.astro';
 
-type Props = SiteHeadProps;
+type Props = {
+  hoge?: string;
+  headEdit?: boolean; //head編集
+};
 
 //style
 import '@/styles/base.scss'; //グローバルCSS
@@ -17,7 +30,7 @@ const props: Props = Astro.props;
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <SiteHead {...props} />
+    {props.headEdit ? <slot name="site-head" /> : <SiteHead />}
   </head>
   <body>
     <div class={[styles['site'], 'siteWrapper'].join(' ')}>

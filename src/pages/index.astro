@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHead from '@/layouts/parts/SiteHead.astro';
+
 import Card from '../components/Card.astro';
 import Alert from '@/components/common/Alert';
 import IconFont from '@/components/common/IconFont';
@@ -16,7 +18,9 @@ import ReactModal from '@/components/sample/ReactModal';
 
   sample();
 </script>
-<Layout title="Welcome to Astro." description={'ああああああ'}>
+<Layout headEdit={true}>
+ 
+  <SiteHead slot="site-head" title='aaaaa' hoge='aaaa' />
 
   <main>
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
@@ -99,6 +103,7 @@ import ReactModal from '@/components/sample/ReactModal';
       />
     </ul>
   </main>
+   <p slot="site-head">タイトル</p>
 </Layout>
 
 <style>
