@@ -4,7 +4,6 @@
     "baseUrl": ".",//importするときのベースパス
     "paths": {
       "@/*": ["src/*"] //importするときのエイリアス
-    },
-    "target": "es6",
+    }
   },
 }

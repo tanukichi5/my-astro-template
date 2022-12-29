@@ -11,8 +11,7 @@
     "lint:fix": "eslint --fix './src/**/*.{ts,tsx,astro}' && prettier --write './src/**/*.{ts,tsx,astro}'",
     "iconfont": "run-p gulp:iconfont typegen:iconfont",
     "gulp:iconfont": "gulp",
-    "typegen:iconfont": "typed-scss-modules src/styles/foundation/base/_iconfont-type.scss --watch --exportType default",
-    "typegen:scss": "typed-scss-modules src --exportType default"
+    "typegen:iconfont": "typed-scss-modules src/styles/foundation/base/_iconfont-type.scss --watch --exportType default --nameFormat none --implementation sass"
   },
   "dependencies": {
     "@types/react": "^18.0.26",
