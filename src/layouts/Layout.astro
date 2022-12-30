@@ -18,11 +18,10 @@ import Footer from './parts/Footer.astro';
 import BaseScript from './parts/BaseScript.astro';
 
 //style
-import '@/styles/base.scss'; //グローバルCSS
+import '@/styles/base.scss'; //全ページ共通で使用するベースにあたるグローバルCSS
 import styles from './Layout.module.scss';
 
 type Props = {
-  hoge?: string;
   headEdit?: boolean; //head編集
 };
 const props: Props = Astro.props;
