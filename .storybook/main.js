@@ -8,6 +8,9 @@ const path = require('path');
 const rootPath = path.resolve(__dirname, "../src/");
 
 module.exports = {
+  core: {
+    builder: 'webpack5',
+  },
   "stories": [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
@@ -17,33 +20,12 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions"
   ],
-  // stories: [
-  //   '../src/components/**/*.stories.@(js|jsx|ts|tsx)'
-  // ],
-  // addons: [
-  //   "@storybook/addon-links",
-  //   "@storybook/addon-essentials",
-  // ],
   webpackFinal: async (config) => {
     // scss を読み込む
-    config.module.rules.push(
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1, // 1 => postcss-loader
-              modules: {
-                localIdentName: '[local]___[hash:base64:2]',
-              },
-            },
-          },
-          'sass-loader',
-        ],
-      },
-    );
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+    });
     /**
      * 
      * @see {@link https://github.com/storybookjs/storybook/issues/12844 | Github}
@@ -66,18 +48,15 @@ module.exports = {
 
 
  // インストール時の設定
- // module.exports = {
- //   "stories": [
- //     "../src/**/*.stories.mdx",
- //     "../src/**/*.stories.@(js|jsx|ts|tsx)"
- //   ],
- //   "addons": [
- //     "@storybook/addon-links",
- //     "@storybook/addon-essentials",
- //     "@storybook/addon-interactions"
- //   ],
- //   "framework": "@storybook/react",
- //   "core": {
- //     "builder": "@storybook/builder-webpack5"
- //   }
- // }
+// module.exports = {
+//   "stories": [
+//     "../src/**/*.stories.mdx",
+//     "../src/**/*.stories.@(js|jsx|ts|tsx)"
+//   ],
+//   "addons": [
+//     "@storybook/addon-links",
+//     "@storybook/addon-essentials",
+//     "@storybook/addon-interactions"
+//   ],
+//   "framework": "@storybook/react"
+// }

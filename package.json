@@ -15,7 +15,7 @@
     "gulp:iconfont": "gulp",
     "typegen:iconfont": "typed-scss-modules src/styles/foundation/base/_iconfont-type.scss --watch --exportType default --nameFormat none --implementation sass",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -s ./public"
   },
   "dependencies": {
     "@types/react": "^18.0.26",
@@ -35,11 +35,14 @@
     "@storybook/addon-interactions": "^6.5.15",
     "@storybook/addon-links": "^6.5.15",
     "@storybook/builder-webpack4": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
     "@storybook/manager-webpack4": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "babel-loader": "^8.3.0",
+    "css-loader": "^6.7.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-astro": "^0.21.1",
     "eslint-plugin-prettier": "^4.2.1",
@@ -59,7 +62,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.57.1",
-    "sass-loader": "^10.4.1",
-    "typed-scss-modules": "^7.0.1"
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "typed-scss-modules": "^7.0.1",
+    "webpack": "^5.75.0"
   }
 }
